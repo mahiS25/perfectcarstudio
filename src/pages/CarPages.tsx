@@ -84,7 +84,13 @@ export function BookingPage() {
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(booking),
       });
-      const result = await response.json() as { success?: boolean; error?: string; booking_id?: string };
+      const responseText = await response.text();
+      let result: { success?: boolean; error?: string; booking_id?: string };
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error(`Booking service returned an invalid response (${response.status}). Please check the Apps Script deployment.`);
+      }
       if (!response.ok || result.success === false) throw new Error(result.error || 'Unable to submit booking');
       const message = [`New booking request - ${businessConfig.businessName}`, '', `Booking ID: ${result.booking_id || 'Pending'}`, `Name: ${booking.customer_name}`, `Mobile: ${booking.mobile}`, `Service: ${booking.service_id}`, `Date: ${booking.booking_date}`, `Preferred time: ${booking.start_time || 'Flexible'}`, `Vehicle: ${booking.vehicle_type || 'Not specified'}`, `Notes: ${booking.notes || 'None'}`, '', 'Please confirm availability.'].join('\n');
       window.open(`https://wa.me/${businessConfig.whatsapp}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');

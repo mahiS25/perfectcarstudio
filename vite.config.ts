@@ -10,7 +10,7 @@ export default defineConfig({
       '/api/booking': {
         target: 'https://script.google.com',
         changeOrigin: true,
-        rewrite: () => '/macros/s/AKfycbwhr-FIYpAWhYCg_rMoI_uGSUiNyaSql2cdhGPIm1_LV9829BeRiAXDOI8c_8t-O6qGOA/exec',
+        rewrite: () => '/macros/s/AKfycbwx_NDumTFzh740JdGVrEq_yap0eyOzFIlmM0GHEf-0G8COQSjZAvBhPl0iGdj12h7zgg/exec',
       },
     },
   },
