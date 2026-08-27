@@ -24,9 +24,8 @@ const gallery = [
   { image: 'https://images.pexels.com/photos/14231678/pexels-photo-14231678.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1400', category: 'Washing', title: 'Clean by design' },
 ];
 const testimonials = [
-  { quote: 'The kind of care you notice the moment you get back in the car. Everything felt considered, fresh and genuinely premium.', name: 'Aarav Mehta', detail: 'Interior cleaning' },
-  { quote: 'Easy to book, clear communication and a finish that looks beautiful in the sunlight. I will definitely be back.', name: 'Nisha Kulkarni', detail: 'Car detailing' },
-  { quote: 'Finally, a studio that treats the car like it matters. The attention to the small things made all the difference.', name: 'Rohan Shah', detail: 'Premium car wash' },
+  { quote: 'The kind of care you notice the moment you get back in the car. Everything felt considered, fresh and genuinely premium.', name: 'Jitenra', detail: 'Interior cleaning' },
+  { quote: 'Easy to book, clear communication and a finish that looks beautiful in the sunlight. I will definitely be back.', name: 'Rakesh', detail: 'Car detailing' },
 ];
 
 function App() {
